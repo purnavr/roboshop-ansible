@@ -21,7 +21,7 @@
 
 - name: Copy file
   ansible.builtin.copy:
-    src: /roboshop.conf
+    src: roboshop.conf
     dest: /etc/nginx/default.d
 
 - name: Make sure a service unit is running
