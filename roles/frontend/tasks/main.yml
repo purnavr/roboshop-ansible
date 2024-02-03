@@ -24,7 +24,7 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d
 
-- name: Make sure a service unit is running
+- name: start nginx
   ansible.builtin.systemd:
     name: nginx
     state: restarted
