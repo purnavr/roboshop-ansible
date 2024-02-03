@@ -19,9 +19,6 @@
     state: restarted
     enabled: yes
 
-- name: set user
-  ansible.builtin.
-
 - name: set pass
   community.rabbitmq.rabbitmq_user:
     user: roboshop
