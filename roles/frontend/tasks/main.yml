@@ -13,8 +13,9 @@
     path: /usr/share/nginx/html
     state: directory
 
-- name: Unarchive a file that needs to be downloaded (added in 2.0)
+- name: Download frontend
   ansible.builtin.unarchive:
     src: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /usr/share/nginx/html
+    dest: /tmp/frontend.zip
+     cd /usr/share/nginx/html
     remote_src: yes
