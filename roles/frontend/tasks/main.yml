@@ -25,7 +25,7 @@
     dest: /etc/nginx/default.d
 
 - name: Make sure a service unit is running
-  ansible.builtin.systemd_service:
+  ansible.builtin.systemd:
     state: restarted
     name: nginx
     enabled: true
