@@ -1,7 +1,8 @@
-- name: install nginx
+- name: install rpm
   ansible.builtin.yum:
     name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
     state: installed
+    disable_gpg_check: yes
 
 - name: install rpm
   ansible.builtin.dnf:
