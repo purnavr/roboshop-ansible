@@ -1,0 +1,23 @@
+- name: install java
+  ansible.builtin.yum:
+    name: maven
+    state: installed
+
+- name: import app task
+  ansible.builtin.import_tasks:
+    file: app_prereq.yml
+
+- name: download dependencies
+  args:
+    chdir: /app
+  ansible.builtin.shell:
+    mvn clean package
+    mv target/shipping-1.0.jar shipping.jar
+
+- name: import schema task
+  ansible.builtin.import_tasks:
+    file: schema_setup.yml
+
+- name: import systemd task
+  ansible.builtin.import_tasks:
+    file: system_setup.yml
