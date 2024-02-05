@@ -8,11 +8,18 @@
     file: app_prereq.yml
 
 - name: download dependencies
-  args:
-    chdir: /app
   ansible.builtin.shell:
     mvn clean package
+  args:
+    chdir: /app
+
+- name: shell
+  ansible.builtin.shell:
     mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app
+
+
 
 - name: import schema task
   ansible.builtin.import_tasks:
