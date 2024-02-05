@@ -1,5 +1,5 @@
+  when: schema_type == "mongo"
 - block:
-  when: schema_type=="mongo"  
     - name: copy mongodb repo
       ansible.builtin.copy:
         src: mongo.repo
@@ -16,6 +16,7 @@
 
 
 - name: mysql with condition
+  when: schema_type="mysql"
   block:
     - name: install mysql
       ansible.builtin.yum:
@@ -25,7 +26,7 @@
     - name: load the schema
       ansible.builtin.shell:
         mysql -h <0.0.0.0> -uroot -pRoboShop@1 < /app/schema/shipping.sql
-  when: schema_type="mysql"
+
 
 
 
