@@ -14,7 +14,6 @@
       ansible.builtin.shell:
         mongo --host 0.0.0.0 </app/schema/catalogue.js
 
-
 - name: mysql with condition
   block:
     - name: install mysql
