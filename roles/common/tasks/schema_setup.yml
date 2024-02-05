@@ -1,4 +1,5 @@
 - block:
+  when: schema_type=="mongo"
     - name: copy mongodb repo
       ansible.builtin.copy:
         src: mongo.repo
@@ -12,10 +13,11 @@
     - name: load schema
       ansible.builtin.shell:
         mongo --host 0.0.0.0 </app/schema/catalogue.js
-  when: schema_type="mongo"
+
 
 - name: mysql with condition
   block:
+  when: schema_type=="mysql"
     - name: install mysql
       ansible.builtin.yum:
         name: mysql
@@ -24,7 +26,7 @@
     - name: load the schema
       ansible.builtin.shell:
         mysql -h <0.0.0.0> -uroot -pRoboShop@1 < /app/schema/shipping.sql
-  when: schema_type="mysql"
+
 
 
 
