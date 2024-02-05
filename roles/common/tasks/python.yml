@@ -1,6 +1,7 @@
 - name: install python
   ansible.builtin.yum:
-    name: python36 gcc python3-devel
+    name: python36, gcc, python3-devel
+    state: installed
 
 - name: import app task
   ansible.builtin.import_tasks:
