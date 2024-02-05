@@ -13,7 +13,7 @@
 
 - name: import tasks
   ansible.builtin.import_tasks:
-    name: app_prereq.yml
+    file: app_prereq.yml
 
 - name: npm dependencies
   community.general.npm:
