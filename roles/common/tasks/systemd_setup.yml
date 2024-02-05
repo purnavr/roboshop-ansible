@@ -5,7 +5,7 @@
 
 - name: restart service
   ansible.builtin.systemd:
-    name: "{{ component }}"
+    name: cart
     state: restarted
     enabled: true
     daemon-reload: true
