@@ -1,5 +1,5 @@
 - block:
-  when: schema_type="mongo"  
+  when: schema_type=="mongo"  
     - name: copy mongodb repo
       ansible.builtin.copy:
         src: mongo.repo
