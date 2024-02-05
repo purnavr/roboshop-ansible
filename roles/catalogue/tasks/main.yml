@@ -1,3 +1,4 @@
-- name: catalogue
-  ansible.builtin.debug:
-    msg: catalogue
+- name: import common role
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs
