@@ -1,2 +1,2 @@
-component: cart
+component: "cart"
 schema_type : false
