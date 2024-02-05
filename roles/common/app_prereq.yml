@@ -10,6 +10,7 @@
 - name: create a directory
   ansible.builtin.file:
     path: /app
+    state: directory
 
 - name: download file
   ansible.builtin.unarchive:
