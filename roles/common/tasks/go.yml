@@ -1,0 +1,24 @@
+- name: install golang
+  yum:
+    name: golang
+    state: installed
+
+- name: app
+  import_tasks:
+    file: app_prereq.yml
+
+- name : dependencies
+  shell:
+    go mod init dispatch
+
+- name : dependencies
+  shell:
+    go get
+
+- name : dependencies
+  shell:
+    go build
+
+- name: app
+  import_tasks:
+    file: systemd_setup.yml
