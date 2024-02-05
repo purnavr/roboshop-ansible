@@ -1,11 +1,11 @@
 - name: copy service file
   ansible.builtin.copy:
-    src: cart.service
-    dest: /etc/systemd/system/cart.service
+    src: "{{ component }}".service
+    dest: /etc/systemd/system/"{{ component }}".service
 
 - name: restart service
   ansible.builtin.systemd:
-    name: cart
+    name: "{{ component }}"
     state: restarted
     enabled: true
     daemon-reload: true
