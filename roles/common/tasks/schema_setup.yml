@@ -12,7 +12,7 @@
     - name: load schema
       ansible.builtin.shell:
         mongo --host 0.0.0.0 </app/schema/catalogue.js
-  when: schema_type="mongo"
+  when: schema_type==mongo
 
 - name: mysql with condition
   block:
@@ -24,7 +24,7 @@
     - name: load the schema
       ansible.builtin.shell:
         mysql -h <0.0.0.0> -uroot -pRoboShop@1 < /app/schema/shipping.sql
-  when: schema_type="mysql"
+  when: schema_type==mysql
 
 
 
