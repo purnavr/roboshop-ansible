@@ -13,7 +13,7 @@
 
     - name: load schema
       ansible.builtin.shell:
-        mongo --host 0.0.0.0 </app/schema/catalogue.js
+        mongo --host mongodb.roboz.online </app/schema/catalogue.js
 
 
 - name: mysql with condition
@@ -26,7 +26,7 @@
 
     - name: load the schema
       ansible.builtin.shell:
-        mysql -h <0.0.0.0> -uroot -pRoboShop@1 < /app/schema/shipping.sql
+        mysql -h mysql.roboz.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
 
 
 
