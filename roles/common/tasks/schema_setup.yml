@@ -13,7 +13,7 @@
 
     - name: load schema
       ansible.builtin.shell:
-        mongo --host mongodb.roboz.online </app/schema/${component}.js
+        mongo --host mongodb.roboz.online </app/schema/catalogue.js
 
 
 - name: mysql with condition
