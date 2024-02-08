@@ -16,6 +16,7 @@
         mongo --host mongodb.roboz.online </app/schema/catalogue.js
 
 
+
 - name: mysql with condition
   when: schema_type == "mysql"
   block:
