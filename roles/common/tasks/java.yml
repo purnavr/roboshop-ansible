@@ -25,7 +25,6 @@
     chdir: /app
 
 
-
 - name: import schema task
   ansible.builtin.import_tasks:
     file: schema_setup.yml
