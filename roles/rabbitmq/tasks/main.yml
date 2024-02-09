@@ -19,7 +19,7 @@
     state: restarted
     enabled: yes
 
-- name: set pass
+- name: set pass rabbitmq
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
