@@ -1,6 +1,6 @@
 - name: create user
   ansible.builtin.user:
-    name: app
+    name: roboshop
 
 - name: remove app directory
   ansible.builtin.file:

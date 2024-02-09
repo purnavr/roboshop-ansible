@@ -1,4 +1,4 @@
-- name: nodejs repo
+- name: nodejs repo disable
   ansible.builtin.shell:
     dnf module disable nodejs -y
 
