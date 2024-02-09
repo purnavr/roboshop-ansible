@@ -3,10 +3,10 @@
     name: maven
     state: installed
 
-- name: jdk
-  ansible.builtin.yum:
-    name: java-11-openjdk
-    state: installed
+#- name: jdk
+#  ansible.builtin.yum:
+#    name: java-11-openjdk
+#    state: installed
 
 - name: import prereq task
   ansible.builtin.import_tasks:
