@@ -12,6 +12,11 @@
     requirements: /app/requirements.txt
     executable: pip3.6
 
+- name: import schema task
+  ansible.builtin.import_tasks:
+    file: schema_setup.yml
+  when: schema_type is defined
+
 - name: import systemd tasks
   ansible.builtin.import_tasks:
     file: systemd_setup.yml
