@@ -20,7 +20,7 @@
 
 - name: set password
   ansible.builtin.shell:
-    mysql_secure_installation --set-root-pass "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mysql.password', region='us-east-1') }}"
+    mysql_secure_installation --set-root-pass "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.pass', region='us-east-1') }}"
   ignore_errors: yes
 
 
