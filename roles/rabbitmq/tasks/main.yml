@@ -21,8 +21,8 @@
 
 - name: set pass rabbitmq
   community.rabbitmq.rabbitmq_user:
-    user: roboshop
-    password: roboshop123
+    user: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.user', region='us-east-1') }}"
+    password: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.password', region='us-east-1') }}"
     vhost: /
     configure_priv: .*
     read_priv: .*
