@@ -3,6 +3,7 @@
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
 
-- name: display
-  ansible.builtin.debug:
-    msg: test
+- name: restart prom
+  ansible.builtin.systemd:
+    name: prometheus
+    state: restarted
