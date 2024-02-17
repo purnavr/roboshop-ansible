@@ -3,3 +3,6 @@
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
 
+- name: display
+  ansible.builtin.debug:
+    msg: test
