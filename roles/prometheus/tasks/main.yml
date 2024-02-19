@@ -3,6 +3,6 @@
     file: server.yml
   when: prometheus_server
 
-#- name: import the exporter task
-#  import_tasks:
-#    file: exporter.yml
+- name: import the exporter task
+  import_tasks:
+    file: exporter.yml
