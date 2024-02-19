@@ -6,4 +6,4 @@
 - name: import the exporter task
   import_tasks:
     file: exporter.yml
-  when: export_server
+  when: exporter_server
