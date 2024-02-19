@@ -1,4 +1,4 @@
 component: frontend
 exporter_server: true
-prometheus_exporter: true
+
 
