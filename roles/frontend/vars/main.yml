@@ -1,1 +1,4 @@
 component: frontend
+node_exporter: true
+prometheus_exporter: true
+
