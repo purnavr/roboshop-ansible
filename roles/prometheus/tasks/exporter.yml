@@ -1,5 +1,5 @@
 - name: download the node exporter
   unarchive:
-    src: {{ url }}
+    src: "{{ exporter_url }}"
     dest: /opt
     remote_src: true
