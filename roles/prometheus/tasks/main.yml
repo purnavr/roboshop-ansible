@@ -8,3 +8,7 @@
     file: exporter.yml
   when: node_exporter
 
+- name: import grafana task
+  import_tasks:
+    file: grafana.yml
+
