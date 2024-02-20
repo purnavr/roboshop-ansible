@@ -1,14 +1,14 @@
-- name: import server task
-  ansible.builtin.import_tasks:
-    file: server.yml
-  when: prometheus_server
-
-- name: import exporter task
-  import_tasks:
-    file: exporter.yml
-  when: node_exporter
-
-- name: import grafana task
-  import_tasks:
-    file: grafana.yml
-
+#- name: import server task
+#  ansible.builtin.import_tasks:
+#    file: server.yml
+#  when: prometheus_server
+#
+#- name: import exporter task
+#  import_tasks:
+#    file: exporter.yml
+#  when: node_exporter
+#
+#- name: import grafana task
+#  import_tasks:
+#    file: grafana.yml
+#
