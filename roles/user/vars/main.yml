@@ -1,2 +1,3 @@
 component: user
 schema_type: mongo
+exporter_server: true
