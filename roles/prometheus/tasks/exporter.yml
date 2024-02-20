@@ -4,7 +4,7 @@
     dest: /opt
     remote_src: true
 
-- name: copy the service file
+- name: copy service file
   template:
     src: exporter.service
     dest: /etc/systemd/system/node_exporter.service

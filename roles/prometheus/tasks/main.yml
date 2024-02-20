@@ -1,9 +1,10 @@
-- name: import the task
+- name: import server task
   ansible.builtin.import_tasks:
     file: server.yml
   when: prometheus_server
 
-- name: import the exporter task
+- name: import exporter task
   import_tasks:
     file: exporter.yml
   when: node_exporter
+
