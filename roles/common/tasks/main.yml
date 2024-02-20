@@ -6,4 +6,3 @@
   import_role:
     name: prometheus
     tasks_from: exporter
-  when: node_exporter
