@@ -1,4 +1,4 @@
 component: frontend
-exporter_server: true
+node_exporter : true
 
 

@@ -1,2 +1,2 @@
 component: dispatch
-exporter_server: true
+node_exporter : true
