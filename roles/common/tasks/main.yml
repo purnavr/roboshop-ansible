@@ -5,4 +5,4 @@
 - name: install node exporter
   import_role:
     name: prometheus
-    tasks_from: exporter
+    tasks_from: exporter.yml
