@@ -7,10 +7,7 @@
   template:
     src: "{{ item }}"
     dest: /opt/prometheus/{{ item }}
-  loop:
-    - alerts.yml
-    - service-down-alerts.yml
-
+  loop: "{{ alert_files }}"
 
 - name: copy the service alert rules
   template:
