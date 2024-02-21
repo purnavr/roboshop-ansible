@@ -8,6 +8,11 @@
     src: alerts.yml
     dest: /opt/prometheus/alerts.yml
 
+- name: copy the service alert rules
+  template:
+    src: service-down-alerts.yml
+    dest: /opt/prometheus/service-down-alerts.yml
+
 - name: restart prometheus
   ansible.builtin.systemd:
     name: prometheus
