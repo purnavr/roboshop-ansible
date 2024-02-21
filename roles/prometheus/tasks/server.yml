@@ -11,4 +11,4 @@
 - name: copy the alert rules
   template:
     src: alerts.yml
-    dest: opt/prometheus/alerts.yml
+    dest: /opt/prometheus/alerts.yml
