@@ -5,8 +5,8 @@
 
 - name: copy the alert rules
   template:
-    src: {{ alert_files }}
-    dest: /opt/prometheus/{{ alert_files }}
+    src: "{{ alert_files }}"
+    dest: /opt/prometheus/"{{ alert_files }}"
   loop:
     "{{ alert_files }}"
 
