@@ -5,9 +5,11 @@
 
 - name: copy the alert rules
   template:
-    src: alerts.yml
-    dest: /opt/prometheus/alerts.yml
-#  loop: "{{ alert_files }}"
+    src: {{ item }}
+    dest: /opt/prometheus/{{ item }}
+  loop:
+    - alerts.yml
+    - service-down-alerts.yml
 
 
 - name: copy the service alert rules
