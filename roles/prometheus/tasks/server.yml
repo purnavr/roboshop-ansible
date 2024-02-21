@@ -5,7 +5,7 @@
 
 - name: copy the alert rules
   template:
-    src: {{ item }}
+    src: "{{ item }}"
     dest: /opt/prometheus/{{ item }}
   loop:
     - alerts.yml
