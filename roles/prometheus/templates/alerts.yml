@@ -3,7 +3,7 @@ groups:
   rules:
     - alert: ServerDown
       expr: up < 1
-      for: 30s
+      for: 30ses
       labels:
         severity: critical
       annotations:
