@@ -11,4 +11,5 @@
 - name: import grafana task
   import_tasks:
     file: grafana.yml
+  when: grafana
 
