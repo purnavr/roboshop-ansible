@@ -1,0 +1,5 @@
+- name: download alertmanager
+  unarchive:
+    scr: {{ alertmanager_url }}
+    dest: /opt
+    remote_src: true
