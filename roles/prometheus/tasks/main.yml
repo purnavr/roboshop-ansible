@@ -13,3 +13,9 @@
     file: grafana.yml
   when: grafana
 
+- name: import grafana task
+  import_tasks:
+    file: alertmanager.yml
+  when: alertmanager
+
+
