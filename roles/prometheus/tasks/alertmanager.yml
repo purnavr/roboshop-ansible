@@ -1,5 +1,17 @@
 - name: download alertmanager
   unarchive:
-    scr: {{ alertmanager_url }}
+    scr: "{{ alertmanager_url }}"
     dest: /opt
     remote_src: true
+
+- name: copy alertmanager service file
+  template:
+    src: alertmanager.service
+    dest: /etc/systemd/system/alertmanager.service
+
+- name: start service
+  systemd:
+    name: alertmanager
+    state: restarted
+    enabled: true
+    daemon-reload: true

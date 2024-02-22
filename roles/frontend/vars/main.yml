@@ -1,4 +1,5 @@
 component: frontend
-node_exporter : true
+node_exporter: true
+alertmanager: true
 
 

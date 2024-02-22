@@ -7,3 +7,9 @@
     name: prometheus
     tasks_from: exporter
   when: node_exporter
+
+- name: install alertmanager
+  import_role:
+    name: prometheus
+    tasks_from: alertmanager.yml
+  when: alertmanager

@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Type=simple
 WorkingDirectory=/opt/alertmanager
-ExecStart=/opt/alertmanager/alertmanager
+ExecStart=/opt/{{alertmanager_dir}}/alertmanager
 
 [Install]
 WantedBy=multi-user.target
