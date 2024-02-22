@@ -9,7 +9,7 @@ receivers:
     email_configs:
       - to: friendscreations634@gmail.com
         from: friendscreations634@gmail.com
-        smarthost: email-smtp.us-east-1.amazonaws.com:587
+        smarthost: "email-smtp.us-east-1.amazonaws.com:587"
         auth_username: "{{user}}"
         auth_password: "{{pass}}"
         require_tls: true
