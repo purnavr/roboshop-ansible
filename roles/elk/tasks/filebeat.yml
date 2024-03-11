@@ -7,10 +7,9 @@
   yum:
     name: filebeat
     state: installed
-    enabled: yes
-  #when: filebeat
 
 - name: restart elastic search
   systemd:
     name: filebeat
     state: restarted
+    enabled: yes
