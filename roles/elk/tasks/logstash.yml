@@ -2,7 +2,6 @@
   template:
     src: logstash.conf
     dest: /etc/logstash/conf.d/logstash.conf
-  when: logstash
 
 - name:
     systemd:
