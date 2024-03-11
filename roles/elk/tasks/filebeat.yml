@@ -8,7 +8,7 @@
     name: filebeat
     state: installed
     enabled: yes
-  when: filebeat
+  #when: filebeat
 
 - name: restart elastic search
   systemd:
