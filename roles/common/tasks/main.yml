@@ -10,6 +10,6 @@
 
 - name: install filebeat
   import_role:
-    name: filebeat
+    name: elk
     tasks_from: filebeat
   when: filebeat
