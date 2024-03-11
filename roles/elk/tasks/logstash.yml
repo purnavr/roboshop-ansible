@@ -3,7 +3,8 @@
     src: logstash.conf
     dest: /etc/logstash/conf.d/logstash.conf
 
-- name:
-    systemd:
-      name: logstash
-      state: restarted
+- name: restart logstash
+  systemd:
+    name: logstash
+    state: restarted
+    enabled: yes
