@@ -8,3 +8,8 @@
     tasks_from: exporter
   when: node_exporter
 
+- name: install filebeat
+  import_role:
+    name: filebeat
+    tasks_from: filebeat
+  when: filebeat
