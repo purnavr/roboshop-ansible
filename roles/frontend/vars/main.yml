@@ -1,6 +1,6 @@
 component: frontend
 node_exporter: false
-filebeat: true
+filebeat: false
 log_path: /var/log/nginx/access.log
 
 
