@@ -8,3 +8,6 @@
     name: logstash
     state: restarted
     enabled: yes
+
+- name: netstat
+  shell: sleep 60 ; netstat -lntp | grep 5044
