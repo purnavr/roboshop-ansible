@@ -1,3 +1,2 @@
 filebeat: false
 elk: false
-nginx: false

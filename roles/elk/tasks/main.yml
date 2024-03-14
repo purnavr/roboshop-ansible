@@ -8,7 +8,3 @@
     file: logstash.yml
   when: elk
 
-- name: import logstash
-  import_tasks:
-    file: nginx.yml
-  when: nginx

@@ -14,8 +14,3 @@
     tasks_from: filebeat
   when: filebeat
 
-- name: install filebeat
-  import_role:
-    name: elk
-    tasks_from: nginx
-  when: nginx
