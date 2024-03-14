@@ -1,0 +1,9 @@
+- name: copy nginx conf
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
+- name: restar nginx
+  systemd:
+    name: nginx
+    state: restarted
