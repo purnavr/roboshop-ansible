@@ -19,6 +19,11 @@
   community.general.npm:
     path: /app
 
+#- name: npm
+#  shell: npm install
+#  args:
+#    chdir: /app
+
 - name: import schema tasks
   ansible.builtin.import_tasks:
     file: schema_setup.yml
