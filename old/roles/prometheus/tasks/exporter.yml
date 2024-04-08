@@ -1,0 +1,17 @@
+- name: download the node exporter
+  unarchive:
+    src: "{{ exporter_url }}"
+    dest: /opt
+    remote_src: true
+
+- name: copy service file
+  template:
+    src: exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+
+- name: start service
+  systemd:
+    name: node_exporter
+    state: restarted
+    enabled: true
+    daemon-reload: true
