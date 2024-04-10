@@ -24,6 +24,8 @@
 
 
 
+
+
 - name: mysql with condition
   when: schema_type == "mysql"
   block:
