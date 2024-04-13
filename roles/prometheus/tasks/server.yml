@@ -1,3 +1,9 @@
+- name: download prometheus
+  unarchive:
+    src: "{{ prom_url }}"
+    dest: /opt
+    remote_src: true
+
 - name: copy prometheus config file
   ansible.builtin.template:
     src: prometheus.yml
@@ -13,6 +19,11 @@
   template:
     src: service-down-alerts.yml
     dest: /opt/prometheus/service-down-alerts.yml
+
+- name: copy the service file
+  template:
+    src: prom.service
+    dest: /etc/systemd/system/prometheus.service
 
 - name: restart prometheus
   ansible.builtin.systemd:
