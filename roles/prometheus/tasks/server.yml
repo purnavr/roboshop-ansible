@@ -7,7 +7,7 @@
 - name: copy prometheus config file
   ansible.builtin.template:
     src: prometheus.yml
-    dest: /opt/"{{ prom_url }}"/prometheus.yml
+    dest: /opt/{{prometheus_dir}}/prometheus.yml
 
 - name: copy the alert rules
   template:
