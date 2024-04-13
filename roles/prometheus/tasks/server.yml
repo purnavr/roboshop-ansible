@@ -12,13 +12,13 @@
 - name: copy the alert rules
   template:
     src: "{{ item }}"
-    dest: /opt/prometheus/{{ item }}
+    dest: /opt/{{prometheus_dir}}/{{ item }}
   loop: "{{ alert_files }}"
 
 - name: copy the service alert rules
   template:
     src: service-down-alerts.yml
-    dest: /opt/prometheus/service-down-alerts.yml
+    dest: /opt/{{prometheus_dir}}/service-down-alerts.yml
 
 - name: copy the service file
   template:
