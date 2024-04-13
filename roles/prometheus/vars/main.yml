@@ -9,4 +9,4 @@ components:
 
 alert_files:
   - alerts.yml
-  - service-down-alerts.yml
+  - service-downalerts.yml

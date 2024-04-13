@@ -1,0 +1,10 @@
+- name: download prometheus
+  unarchive:
+    src: {{ prom_url }}
+    dest: /opt/prometheus
+
+- name: systemd start promethus
+  systemd:
+    name: promethues
+    state: restarted
+    enabled: true

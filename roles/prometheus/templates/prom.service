@@ -1,0 +1,11 @@
+[Unit]
+Description=prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/opt/{{exporter_dir}}/prometheus --collector.systemd
+
+[Install]
+WantedBy=multi-user.target
