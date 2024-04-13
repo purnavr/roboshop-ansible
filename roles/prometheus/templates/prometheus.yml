@@ -29,7 +29,7 @@ scrape_configs:
       - region: us-east-1
         port: 9100
         filters:
-          - name: "tag:monitor"
+          - name: "tag:Monitor"
             values: ["yes"]
 
     relabel_configs:
