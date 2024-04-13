@@ -29,6 +29,8 @@
   ansible.builtin.systemd:
     name: prometheus
     state: restarted
+    enabled: true
+    daemon-reload: true
 
 - name: copy alertmanager config file
   ansible.builtin.template:
