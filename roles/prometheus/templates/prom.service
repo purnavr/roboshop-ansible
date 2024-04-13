@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/{{exporter_dir}}/prometheus --collector.systemd
+ExecStart=/opt/{{prometheus_dir}}/prometheus --collector.systemd
 
 [Install]
 WantedBy=multi-user.target
