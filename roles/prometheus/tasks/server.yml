@@ -1,7 +1,7 @@
 - name: download prometheus
   unarchive:
     src: "{{ prom_url }}"
-    dest: /opt/
+    dest: /opt
     remote_src: true
 
 - name: copy prometheus config file
