@@ -2,9 +2,17 @@
   unarchive:
     src: {{ prom_url }}
     dest: /opt/prometheus
+    remote_src: true
 
-- name: systemd start promethus
+- name: copy the service file
+  template:
+    src: prom.service
+    dest: /etc/systemd/system/prometheus.service
+
+
+- name: systemd start prometheus
   systemd:
-    name: promethues
+    name: prometheus
     state: restarted
     enabled: true
+    daemon-reload: true
