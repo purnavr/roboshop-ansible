@@ -10,5 +10,5 @@ alertmanager_url: https://github.com/prometheus/alertmanager/releases/download/v
 alertmanager_dir: "{{ alertmanager_url | split('/') | last | regex_replace('.tar.gz', '') }}"
 
 prom_url: https://github.com/prometheus/prometheus/releases/download/v2.51.1/prometheus-2.51.1.linux-amd64.tar.gz
-prometheus_dir: "{{ url | split('/') | last | regex_replace('.tar.gz', '') }}"
+prometheus_dir: "{{ prom_url | split('/') | last | regex_replace('.tar.gz', '') }}"
 
