@@ -4,11 +4,11 @@
     dest: /opt/prometheus/prometheus.yml
     remote_src: true
 
-- name: copy the alert rules
-  template:
-    src: "{{ item }}"
-    dest: /opt/prometheus/{{ item }}
-  loop: "{{ alert_files }}"
+#- name: copy the alert rules
+#  template:
+#    src: "{{ item }}"
+#    dest: /opt/prometheus/{{ item }}
+#  loop: "{{ alert_files }}"
 
 - name: copy the service alert rules
   template:
@@ -20,12 +20,12 @@
     name: prometheus
     state: restarted
 
-- name: copy alertmanager config file
-  ansible.builtin.template:
-    src: alertmanager.yml
-    dest: /opt/alertmanager-0.27.0-rc.0.linux-amd64/alertmanager.yml
-
-- name: restart alertmanager
-  ansible.builtin.systemd:
-    name: alertmanager
-    state: restarted
+#- name: copy alertmanager config file
+#  ansible.builtin.template:
+#    src: alertmanager.yml
+#    dest: /opt/alertmanager-0.27.0-rc.0.linux-amd64/alertmanager.yml
+#
+#- name: restart alertmanager
+#  ansible.builtin.systemd:
+#    name: alertmanager
+#    state: restarted
