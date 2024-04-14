@@ -1,4 +1,4 @@
-prom_server: false
+prometheus_server: false
 node_exporter: false
 grafana: false
 alertmanager: false
