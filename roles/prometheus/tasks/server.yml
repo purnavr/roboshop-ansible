@@ -1,46 +1,46 @@
-- name: download prometheus
-  unarchive:
-    src: "{{ prom_url }}"
-    dest: /opt
-    remote_src: true
-
-- name: copy prometheus config file
-  ansible.builtin.template:
-    src: prometheus.yml
-    dest: /opt/{{prometheus_dir}}/prometheus.yml
-
-#- name: copy the alert rules
-#  template:
-#    src: "{{ item }}"
-#    dest: /opt/{{prometheus_dir}}/{{ item }}
-#  loop: "{{ alert_files }}"
+#- name: download prometheus
+#  unarchive:
+#    src: "{{ prom_url }}"
+#    dest: /opt
+#    remote_src: true
 #
-#- name: copy the service alert rules
-#  template:
-#    src: service-down-alerts.yml
-#    dest: /opt/{{prometheus_dir}}/service-down-alerts.yml
-
-- name: copy the service file
-  template:
-    src: prom.service
-    dest: /etc/systemd/system/prometheus.service
-
-- name: restart prometheus
-  ansible.builtin.systemd:
-    name: prometheus
-    state: restarted
-    enabled: true
-    daemon-reload: true
-
-#- name: copy alertmanager config file
+#- name: copy prometheus config file
 #  ansible.builtin.template:
-#    src: alertmanager.yml
-#    dest: /opt/alertmanager-0.27.0-rc.0.linux-amd64/alertmanager.yml
+#    src: prometheus.yml
+#    dest: /opt/{{prometheus_dir}}/prometheus.yml
 #
-#- name: restart alertmanager
+##- name: copy the alert rules
+##  template:
+##    src: "{{ item }}"
+##    dest: /opt/{{prometheus_dir}}/{{ item }}
+##  loop: "{{ alert_files }}"
+##
+##- name: copy the service alert rules
+##  template:
+##    src: service-down-alerts.yml
+##    dest: /opt/{{prometheus_dir}}/service-down-alerts.yml
+#
+#- name: copy the service file
+#  template:
+#    src: prom.service
+#    dest: /etc/systemd/system/prometheus.service
+#
+#- name: restart prometheus
 #  ansible.builtin.systemd:
-#    name: alertmanager
+#    name: prometheus
 #    state: restarted
+#    enabled: true
+#    daemon-reload: true
+#
+##- name: copy alertmanager config file
+##  ansible.builtin.template:
+##    src: alertmanager.yml
+##    dest: /opt/alertmanager-0.27.0-rc.0.linux-amd64/alertmanager.yml
+##
+##- name: restart alertmanager
+##  ansible.builtin.systemd:
+##    name: alertmanager
+##    state: restarted
 
 
 
