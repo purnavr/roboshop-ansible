@@ -1,0 +1,12 @@
+components:
+  - nginx
+  - catalogue
+  - user
+  - cart
+  - shipping
+  - payment
+  - dispatch
+
+alert_files:
+  - alerts.yml
+  - service-down-alerts.yml
