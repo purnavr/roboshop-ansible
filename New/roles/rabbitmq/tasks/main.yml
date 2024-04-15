@@ -1,0 +1,30 @@
+- name: cofig repo
+  ansible.builtin.shell:
+    curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
+- name : install repo
+  ansible.builtin.shell:
+    curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+
+- name: install rabbitmq
+  ansible.builtin.yum:
+    name:
+      - rabbitmq-server
+      - erlang
+    state: installed
+
+- name: start rabbitmq
+  ansible.builtin.systemd:
+    name: rabbitmq-server
+    state: restarted
+    enabled: yes
+
+- name: set pass rabbitmq
+  community.rabbitmq.rabbitmq_user:
+    user: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.user', region='us-east-1') }}"
+    password: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.password', region='us-east-1') }}"
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present

@@ -1,0 +1,44 @@
+- name: mongodb with condition
+  when: schema_type == "mongo"
+  block:
+    - name: copy mongodb repo
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d
+
+    - name: install mongo-org
+      ansible.builtin.dnf:
+        name: mongodb-org-shell
+        state: installed
+
+    - name: Pem
+      get_url:
+        url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+        dest: /app/rds-combined-ca-bundle.pem
+
+    - name: load
+      ansible.builtin.shell:
+        mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.endpoint', region='us-east-1') }}:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.user', region='us-east-1') }} --password {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.pass', region='us-east-1') }} </app/schema/{{component}}.js
+
+
+
+
+- name: mysql with condition
+  when: schema_type == "mysql"
+  block:
+    - name: install mysql
+      ansible.builtin.yum:
+        name: mysql
+        state: installed
+
+    - name: load the schema
+      ansible.builtin.shell:
+        mysql --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.endpoint', region='us-east-1' ) }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.user', region='us-east-1' ) }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.pass', region='us-east-1' ) }} < /app/schema/{{component}}.sql
+#      ignore_errors: yes
+
+
+
+
+
+
+

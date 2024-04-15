@@ -1,0 +1,16 @@
+- name: set host name
+  shell:
+    set-hostname {{component}}
+
+- name: install node exporter
+  import_role:
+    name: prometheus
+    tasks_from: exporter
+  when: node_exporter
+
+- name: install filebeat
+  import_role:
+    name: elk
+    tasks_from: filebeat
+  when: filebeat
+
