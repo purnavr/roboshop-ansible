@@ -4,11 +4,11 @@
     dest: /opt/prometheus/prometheus.yml
     remote_src: true
 
-#- name: copy the alert rules
-#  template:
-#    src: "{{ item }}"
-#    dest: /opt/prometheus/{{ item }}
-#  loop: "{{ alert_files }}"
+- name: copy the alert rules
+  template:
+    src: "{{ item }}"
+    dest: /opt/prometheus/{{ item }}
+  loop: "{{ alert_files }}"
 
 - name: copy the service alert rules
   template:
