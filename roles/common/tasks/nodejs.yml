@@ -15,9 +15,9 @@
   ansible.builtin.import_tasks:
     file: app_prereq.yml
 
-- name: npm dependencies
-  community.general.npm:
-    path: /app
+#- name: npm dependencies
+#  community.general.npm:
+#    path: /app
 
 #- name: npm
 #  shell: npm install
