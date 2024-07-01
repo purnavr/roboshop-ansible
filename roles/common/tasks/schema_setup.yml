@@ -19,7 +19,7 @@
     - name: load
       ansible.builtin.shell:
         mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.endpoint', region='us-east-1') }}:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.user', region='us-east-1') }} --password {{ lookup('amazon.aws.aws_ssm', '{{env}}.docdb.pass', region='us-east-1') }} </app/schema/{{component}}.js
-      ignore_errors: yes
+#      ignore_errors: yes
 
 
 
@@ -38,7 +38,7 @@
     - name: load the schema
       ansible.builtin.shell:
         mysql --host {{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.endpoint', region='us-east-1' ) }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.user', region='us-east-1' ) }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.rds.pass', region='us-east-1' ) }} < /app/schema/{{component}}.sql
-      ignore_errors: yes
+#      ignore_errors: yes
 
 
 
