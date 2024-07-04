@@ -6,7 +6,7 @@
 
 - name: roboshop setup
   hosts: all
-#  serial: 1
-#  become: true
+  serial: 1
+  become: true
   roles:
     - "{{ role_name }}"
