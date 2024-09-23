@@ -1,12 +1,12 @@
-#- name: roboshop setup
-#  hosts: localhost
-#  roles:
-#    - "{{ role_name }}"
-
-
 - name: roboshop setup
-  hosts: all
-  serial: 1
-  become: true
+  hosts: localhost
   roles:
     - "{{ role_name }}"
+
+
+#- name: roboshop setup
+#  hosts: all
+#  serial: 1
+#  become: true
+#  roles:
+#    - "{{ role_name }}"
